@@ -1,0 +1,69 @@
+<ng-container *ngIf="products.length !=0">
+    <div class="container">
+    <div class="card-table">
+        <div class="card">
+            <div class="card-header">Cart Items
+                <button type="button" class="btn2" (click)="emptyCart()">Clear Cart</button>
+                
+
+            </div>
+        </div>
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                       
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>MRP</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                       
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    <tr *ngFor="let item of products">
+                        
+                        <td ><img src="https://bookcart.azurewebsites.net/Upload/{{item.coverFileName}}" width="100px" height="100px"></td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.price}}</td>
+                        <td><button (click)="item.quantity=item.quantity-1" [disabled]="item.quantity==1" >-</button> {{item.quantity}}<button  (click)="item.quantity=item.quantity+1" >+</button></td>
+                        <td>{{item.price * item.quantity }}</td>
+                        <td>
+                            <button (click)="removeItem(item)" class="btn btn-danger"> <i class="fa fa-trash"></i>
+                            </button>
+                            
+                        </td>
+                       
+                        
+                    </tr>
+                   
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>Cart Total : ₹{{grandTotal}}</td>
+                        
+                            
+                            <td><button type="button" class="btn1" routerLink="/checkout">CheckOut</button></td>
+                           
+                    </tr>
+                    </tbody>
+
+            </table>
+            </div>
+    </div>
+</div>
+</ng-container>
+<ng-container  *ngIf="products.length ==0">
+<div class="container mt-3">
+   
+    <div class="card">
+      <div class="card-header">Cart Items</div>
+      <div style="font-size: 30px" class="card-body">Shopping cart is empty </div> 
+      <div  class="card-body"><button routerLink="/product" class="btn btn-primary ">Continue Shopping</button></div>
+    </div>
+  </div>
+</ng-container> 
+
+

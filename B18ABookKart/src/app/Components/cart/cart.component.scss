@@ -1,0 +1,50 @@
+.card-header{
+    font-size: 30px;
+    background-color:#e83e8c;
+    color:white
+}
+
+.card-table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+    margin-top: 50px;
+}
+
+.btn2{
+    float: right;
+    background-color: white;
+    border-radius: 5px;
+    font-size: large;
+    padding:5px;
+}
+
+.button{
+    float:right;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.checkout{
+    background-color: #dc3545;
+    color:white;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 0px 20px 0px 20px;
+}
+
+.btn1{
+   
+    background-color: #dc3545;
+    color:white;
+    border-radius: 5px;
+    padding:5px;
+}
+
+
